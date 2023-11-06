@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "poetry-convert"
+version = "0.1.0"
+description = "A script that utilized typer, rich to create a tool that converts requirements.txt to be compatible with poetry"
+authors = ["thoth2357"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "poetry_convert"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = "^0.9.0"
+rich = "^13.6.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.1"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
