@@ -1,9 +1,9 @@
 # import module
 
-import re
 import os
+import re
+
 import typer
-from typing_extensions import Annotated
 
 
 def poetry_convert(
@@ -13,7 +13,8 @@ def poetry_convert(
 ):
     if not os.path.exists(source_file):
         typer.echo(
-            f"Error: The specified requirements file '{source_file}' " "does not exist."
+            f"Error: The specified requirements file '{source_file}' "
+            "does not exist."  # type: ignore
         )
         raise typer.Abort()
 
@@ -29,12 +30,8 @@ def poetry_convert(
         requirements = fh.read()
 
     no_comments = re.sub(
-        "^#.*$",
-        "",
-        requirements,
-        0,
-        re.IGNORECASE | re.MULTILINE
-    )
+        "^#.*$", "", requirements, 0, re.IGNORECASE | re.MULTILINE
+    )  # noqa
     bare_requirements = re.sub(
         "\n+", "\n", no_comments, 0, re.IGNORECASE | re.MULTILINE
     ).strip()
