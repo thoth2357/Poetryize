@@ -2,7 +2,7 @@ import os
 
 from typer.testing import CliRunner
 
-from src.poetryize.poetryize import app
+from poetryize.poetryize import app
 
 runner = CliRunner()
 

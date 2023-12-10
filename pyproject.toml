@@ -5,7 +5,7 @@ description = "A script that utilized typer, rich to create a tool that converts
 authors = ["thoth2357 <thoth2357@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "poetryize", from = "src"}]
+packages = [{include = "poetryize"}]
 repository = "https://github.com/thoth2357/poetry"
 
 [tool.poetry.dependencies]
