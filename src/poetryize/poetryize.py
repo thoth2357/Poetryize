@@ -1,9 +1,11 @@
 # import module
 import os
 import re
-from typing import Annotated  # noqa: TYP001
 
 import typer
+
+from typing import Annotated  # noqa: TYP001 isort: skip
+
 
 app = typer.Typer()
 
