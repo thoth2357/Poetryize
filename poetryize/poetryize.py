@@ -66,8 +66,8 @@ def poetry(
                 if len(line.split(" ")) == 1:
                     req_list.append(line)
                 else:
-                    print(
-                        f"❌ Skipping '{line}' 😥: There seems to be a problem with the '{line}' dependency provided."  # noqa
+                    typer.echo(
+                        f"Skipping Dependency There seems to be a problem with the '{line}' dependency provided."  # noqa
                     )
 
         for req in req_list:
