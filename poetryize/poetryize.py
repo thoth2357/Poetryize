@@ -63,9 +63,13 @@ def poetry(
                 poetry_line = f"{package}:{poetry_match}{version}"
                 req_list.append(poetry_line)
             except ValueError:
-                req_list.append(line)
+                if len(line.split(" ")) == 1:
+                    req_list.append(line)
+                else:
+                    print(
+                        f"❌ Skipping '{line}' 😥: There seems to be a problem with the '{line}' dependency provided."  # noqa
+                    )
 
-        typer.echo("Found Poetry-compatible dependencies:")
         for req in req_list:
             typer.echo(req)
             os.system(f"poetry add {req}")
