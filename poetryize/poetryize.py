@@ -48,19 +48,22 @@ def poetry(
 
         req_list = list()
         for line in bare_requirements.splitlines():
-            package, match, version = re.sub(
-                r"^(.*?)\s*([~>=<])=\s*v?([0-9\.\*]+)",
-                r"\1,\2,\3",
-                line,
-                0,
-                re.IGNORECASE | re.MULTILINE,
-            ).split(",")
             try:
-                poetry_match = pip_poetry_map.get(match, match)
-            except KeyError:
-                poetry_match = match
-            poetry_line = f"{package}:{poetry_match}{version}"
-            req_list.append(poetry_line)
+                package, match, version = re.sub(
+                    r"^(.*?)\s*([~>=<])=\s*v?([0-9\.\*]+)",
+                    r"\1,\2,\3",
+                    line,
+                    0,
+                    re.IGNORECASE | re.MULTILINE,
+                ).split(",")
+                try:
+                    poetry_match = pip_poetry_map.get(match, match)
+                except KeyError:
+                    poetry_match = match
+                poetry_line = f"{package}:{poetry_match}{version}"
+                req_list.append(poetry_line)
+            except ValueError:
+                req_list.append(line)
 
         typer.echo("Found Poetry-compatible dependencies:")
         for req in req_list:
