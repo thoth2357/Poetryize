@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetryize"
-version = "0.1.0"
+version = "1.0.0"
 description = "A script that utilized typer, rich to create a tool that converts requirements.txt to be compatible with poetry"
 authors = ["thoth2357 <thoth2357@gmail.com>"]
 license = "MIT"
@@ -28,6 +28,8 @@ isort = "^5.12.0"
 flake8 = "^6.1.0"
 pytest = "^7.4.3"
 coverage = "^7.3.4"
+tox = "^4.11.4"
+
 
 [build-system]
 requires = ["poetry-core"]
