@@ -53,7 +53,7 @@ Poetryize is a command-line tool built with Typer that facilitates the conversio
 
 
 ## Demo
-https://github.com/thoth2357/Poetryize/assets/98170427/b2a72dad-c484-4cbf-b4c4-2923eb4be59a
+<video src='https://github.com/thoth2357/Poetryize/assets/98170427/b2a72dad-c484-4cbf-b4c4-2923eb4be59a' height=50></video>
 
 ## License
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
