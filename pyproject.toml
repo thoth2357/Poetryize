@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "poetryize"
-version = "1.0.0"
+version = "1.0.1"
 description = "A script that utilized typer, rich to create a tool that converts requirements.txt to be compatible with poetry"
 authors = ["thoth2357 <thoth2357@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "poetryize"}]
-repository = "https://github.com/thoth2357/poetry"
+repository = "https://github.com/thoth2357/poetryize"
 
 [tool.poetry.dependencies]
 python = "^3.9"
